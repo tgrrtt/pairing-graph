@@ -1,11 +1,11 @@
 {
   "nodes":[
-    {"name":"Adam","group":1},
-    {"name":"James","group":1},
-    {"name": "Aric", "group":1},
-    {"name": "Greg F.", "group":1},
-    {"name": "John", "group":1},
-    {"name": "Folipe", "group":1}
+    {"name":"Adam", "id":1, "group":1},
+    {"name":"James", "id":2, "group":1},
+    {"name": "Aric", "id":3, "group":1},
+    {"name": "Greg F.", "id":4,"group":1},
+    {"name": "John", "id":5, "group":1},
+    {"name": "Folipe", "id":6, "group":1}
   ],
   "links":[
     {"source":0,"target":1,"value":1},

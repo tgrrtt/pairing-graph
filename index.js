@@ -1,11 +1,12 @@
 var width = 960,
     height = 500;
+    fill = d3.scale.category20();
 
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
     .charge(-120)
-    .linkDistance(30)
+    .linkDistance(60)
     .size([width, height]);
 
 var svg = d3.select("body").append("svg")
@@ -13,7 +14,7 @@ var svg = d3.select("body").append("svg")
     .attr("height", height);
 
 d3.json("pairData.json", function(error, graph) {
-  console.log(graph);
+  //console.log(graph);
   force
       .nodes(graph.nodes)
       .links(graph.links)
@@ -29,8 +30,8 @@ d3.json("pairData.json", function(error, graph) {
       .data(graph.nodes)
     .enter().append("circle")
       .attr("class", "node")
-      .attr("r", 5)
-      .style("fill", "blue")
+      .attr("r", 15)
+      .style("fill", function(d) { return fill(d.id); })
       .call(force.drag);
 
   node.append("title")
