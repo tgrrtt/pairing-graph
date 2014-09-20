@@ -14,7 +14,6 @@ var svg = d3.select("body").append("svg")
     .attr("height", height);
 
 d3.json("pairData.json", function(error, graph) {
-  //console.log(graph);
   force
       .nodes(graph.nodes)
       .links(graph.links)
