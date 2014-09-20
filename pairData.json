@@ -1,12 +1,17 @@
 {
   "nodes":[
-    {"name":"Tyler","group":1},
     {"name":"Adam","group":1},
-    {"name":"James","group":1}
+    {"name":"James","group":1},
+    {"name": "Aric", "group":1},
+    {"name": "Greg F.", "group":1},
+    {"name": "John", "group":1},
+    {"name": "Folipe", "group":1}
   ],
   "links":[
-    {"source":0,"target":0,"value":1},
-    {"source":1,"target":0,"value":2},
-    {"source":2,"target":0,"value":100}
+    {"source":0,"target":1,"value":1},
+    {"source":0,"target":2,"value":10},
+    {"source":0,"target":3,"value":10},
+    {"source":0,"target":5,"value":10},
+    {"source":5,"target":4,"value":1}
   ]
 }
