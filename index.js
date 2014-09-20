@@ -9,6 +9,38 @@ var force = d3.layout.force()
     .linkDistance(300)
     .size([width, height]);
 
+var fade = function(opacity) {
+  return function(d, i) {
+    ////
+
+    // d is the node object, i is the id, which matches correctly with node obj
+    //fade all non-linked lines
+    svg.selectAll("circle, line").style("opacity", opacity);
+    //console.log(i);
+    // get associated links
+    var relatedLinks = svg.selectAll("line").filter(function(d) {
+      // now d refers to link d
+      // i refers to node id that is being hovered over.
+      if (d.source.id == i || d.target.id == i) {
+        //console.log("yo");
+        return true;
+      } else {
+        return false;
+      }
+      //return d.source.id == i || d.target.id == i;
+    });
+    //console.log(relatedLinks)
+
+    relatedLinks.each(function(linkData, iLink) {
+
+        d3.select(this).style("opacity", 1);
+        console.log(this);
+        console.log(linkData.source);
+        // d3.select(linkData.target);
+    });
+  };
+};
+
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
@@ -29,9 +61,12 @@ d3.json("pairData.json", function(error, graph) {
       .data(graph.nodes)
     .enter().append("circle")
       .attr("class", "node")
-      .attr("r", 15)
+      //.attr("class", function(d) { return d.name; })
+      .attr("cy", 300)
+      .attr("r", 25)
       .style("fill", function(d) { return fill(d.id); })
-      .call(force.drag);
+      .call(force.drag)
+      .on("mouseover", fade(.1)).on("mouseout", fade(1));
 
   node.append("title")
       .text(function(d) { return d.name; });
@@ -46,3 +81,6 @@ d3.json("pairData.json", function(error, graph) {
         .attr("cy", function(d) { return d.y; });
   });
 });
+
+
+
