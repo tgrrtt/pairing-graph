@@ -1,0 +1,22 @@
+{
+  "name": "pairing-graph",
+  "version": "0.0.1",
+  "description": "[Link to live graph](http://tgrrtt.github.io/pairing-graph)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tgrrtt/pairing-graph"
+  },
+  "author": "Tyler Garrett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tgrrtt/pairing-graph/issues"
+  },
+  "homepage": "https://github.com/tgrrtt/pairing-graph",
+  "dependencies": {
+    "prompt": "^0.2.14"
+  }
+}
