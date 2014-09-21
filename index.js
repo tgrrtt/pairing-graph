@@ -25,8 +25,8 @@ d3.json("pairData.json", function(data) {
 
   node.append("svg:image")
       .attr("xlink:href", function(d) { return "Images/"+d.name+"png" })
-      .attr("x", -15)
-      .attr("y", -15)
+      .attr("x", -20)
+      .attr("y", -20)
       .attr("width", 40)
       .attr("height", 40);
 
@@ -68,8 +68,6 @@ d3.json("pairData.json", function(data) {
           return d.target.y;
       });
   }
-
- 
 
   function fade(opacity) {
       return function(d) {
